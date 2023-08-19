@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block content %}
+<form id="bookForm" onsubmit="return book();">
+  <label>Name</label>
+  <input type="text" name="Name" required>
+ 
+  <label>Email</label>
+  <input type="email" name="Email" required>
+ 
+  <label>Date</label>
+  <input type="date" name="Date" required>
+ 
+  <input type="submit" value="Go!" disabled id="bookGo">
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename="js/booking.js") }}"></script>
+{% endblock %}

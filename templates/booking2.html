@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<title>Booking Form HTML Template</title>
+{% endblock %}
+
+{% block styles %}
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cardo:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/booking-form-style.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div id="booking" class="section">
+	<div class="section-center">
+		<div class="container">
+			<div class="row">
+				<div class="booking-form">
+					<div class="form-header">
+						<h1>Make your reservation</h1>
+					</div>
+					<form>
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<span class="form-label">Check In</span>
+									<input class="form-control" type="date" required>
+								</div>
+								<span class="in-out hidden-xs hidden-sm">&#8652;</span>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									<span class="form-label">Check out</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+								<div class="col">
+									<div class="input-group mb-3">
+										<span class="input-group-text form-label" id="num-adults">Adults</span>
+										<input type="number" class="form-control" placeholder="0" aria-label="0" aria-describedby="num-adults">
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-group mb-3">
+										<span class="input-group-text form-label" id="num-children">Children</span>
+										<input type="number" class="form-control" placeholder="0" aria-label="0" aria-describedby="num-children">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-btn">
+										<button class="submit-btn">Check availability</button>
+									</div>
+								</div>
+							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
