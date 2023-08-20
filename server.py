@@ -20,6 +20,10 @@ MAIL_SUBJECT = "Booking Request"
 def index():
   return render_template("booking.html")
 
+@app.route("/landingpage")
+def landing_page():
+    return render_template("landing_page.html")
+
 @app.route("/dev")
 def dev():
   return render_template("booking2.html")

@@ -14,12 +14,27 @@
 
 #booking {
 	font-family: 'Josefin Sans', sans-serif;
-	background-image: url('../images/bg_test.jpeg');
+	background-image: url('../images/threerivers.jpeg');
 	background-size: cover;
 	background-position: center;
 }
 
+#booking-no-bg {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
 #booking::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0);
+}
+
+
+#booking-no-bg::before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -31,7 +46,6 @@
 
 .booking-form {
 	background-color: rgba(255,255,255,0.65);
-
 	max-width: 768px;
 	width: 100%;
 	margin: auto;
@@ -84,7 +98,7 @@
 }
 
 .booking-form .form-control:focus {
-	border-color: #c99552;
+	border-color: #000000;
 }
 
 .booking-form input[type="date"].form-control:invalid {
@@ -122,7 +136,7 @@
 }
 
 .booking-form select.form-control:focus+.select-arrow {
-	background: #c99552;
+	background: #000000;
 	color: #fff;
 }
 
@@ -131,7 +145,7 @@
 	font-weight: 700;
 	margin-bottom: 3px;
 	display: inline-block;
-	color: #c99552;
+	color: #000000;
 	text-transform: capitalize;
 	height: 50px;
 	line-height: 40px;
@@ -141,7 +155,7 @@
 .booking-form .in-out {
 	position: absolute;
 	font-size: 24px;
-	color: #c99552;
+	color: #000000;
 	right: -15px;
 	width: 30px;
 	height: 30px;
@@ -156,7 +170,7 @@
 
 .booking-form .submit-btn {
 	color: #fff;
-	background-color: #c99552;
+	background-color: #000000;
 	font-weight: 700;
 	height: 50px;
 	border: none;
