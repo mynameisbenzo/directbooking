@@ -1,29 +1,27 @@
 <script>
     import { onMount } from 'svelte';
-    export let name;
     
     import routes from "./routes/routes.js";
     import page from "page";
 
-    let currentPage = routes.rand;
+    let currentPage = routes.test;
 
     function setPage({ params: { page, view } }) {
-        currentPage = routes[page];
-        console.log('setPage', currentPage)
+        currentPage = routes["admin"]["index"];
+        // currentPage = routes[page];
+        // console.log(routes[page]);
+        // console.log('setPage', currentPage)
     }
 
     function updateAfterMoving(ctx) {
         ctx.path += `?currentQuery`;
         ctx.save();
     }
-    page("/", () => setPage({ params: { page: 'rand', view: 'test' } }), updateAfterMoving);
-    page("/rand", () => setPage({ params: { page: 'rand', view: 'test' } }), updateAfterMoving);
+    page("/", () => setPage({ params: { page: 'test', view: 'test' } }), updateAfterMoving);
+    page("/rand", () => setPage({ params: { page: 'test', view: 'test' } }), updateAfterMoving);
+    // page("/test", () => setPage({ params: { page: 'rand', view: 'test' } }), updateAfterMoving);
     page("/:page/:view", setPage);
     page({ hashbang: true });
-
-    function addInput(event) {
-        console.log('addInput', event.detail.numberInput);
-    }
     
     function updateQueryString(query) {
         if (window.history.replaceState) {
@@ -44,7 +42,7 @@
 </script>
 
 <style>
-    .right-menu {
+    /* .right-menu {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-end;
@@ -54,7 +52,7 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-    }
+    } */
 
     .wrapper {
         display: flex;  
@@ -75,19 +73,7 @@
 </style>
 
 <div class = "app">
-    <header>
-        <div class="wrapper">
-            <aside class="aside aside-3">
-              <h1>
-                Flask + Svelte:
-                <span>A data science web app.</span>
-              </h1>
-            </aside>
-          </div>
-    </header>
     <main>
-        <h1> Hello {name}!</h1>
-        <svelte:component this={currentPage.body} params={currentPage.params} on:inputForm="{addInput}" />
-
+        <svelte:component this={currentPage.body} params={currentPage.params} />
     </main>
 </div>

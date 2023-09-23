@@ -19,6 +19,15 @@ def home(path):
 def hello():
     return str(random.randint(0, 100))
 
+@app.route("/test")
+def test():
+    name = str(random.choice(["jack", "baki", "yujiro", "gojo", "yuji"]))
+    print(name)
+    data = json.dumps({
+        "name": name
+    })
+    return data
+
 # Tests Python Flask Svelte connection
 @app.route("/randData")
 def randData():

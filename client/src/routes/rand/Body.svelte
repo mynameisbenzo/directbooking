@@ -6,7 +6,7 @@
 
   function submitForm() {
     data = randData(numberInput);
-    console.log('submitForm', numberInput, data);
+    // console.log('submitForm', numberInput, data);
     dispatch('inputForm', 
     {numberInput:numberInput}
     )
